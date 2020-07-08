@@ -106,6 +106,7 @@ def get_undeletable_artifacts(session, repos):
     production_artifacts = { r['uri'] for r in production_artifacts["results"] }
 
     # Artifacts marked as "to keep" should be kept
+    # Test tagging
     permanent_artifact_search_params = {
         "keep": "true",
         "repos": ",".join(repos),
