@@ -4,6 +4,7 @@ def secrets = [
         [$class: 'VaultSecretValue', envVar: 'ARTIFACTORY_API_KEY', vaultKey: 'value']]],
 ]
 
+
 pipeline {
   agent any
   options {
@@ -31,6 +32,7 @@ pipeline {
                                              url: 'git@github.com:Addepar/infrastructure-scripts.git']]])
               // using account artifactorycleanup on jfrog
               // account password is in vault under key 09429b5e-9f0f-4639-a79a-83437d1fefc1
+              // Testing tagging
               wrap([$class: 'VaultBuildWrapper', vaultSecrets: secrets]) {
                 sh 'python artifactory-cleanup/cleanup_artifactory.py 270 30'
               }
