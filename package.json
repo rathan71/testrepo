@@ -99,7 +99,6 @@
 "ember-template-lint": "^2.9.1",
 "ember-test-selectors": "^2.1.0",
 "ember-truth-helpers": "^2.1.0",
-"emberx-select": "github:adopted-ember-addons/emberx-select#bc5f7746ae67d13e17fe2bd118cbed99b0e10aa2",
 "eslint": "^7.5.0",
 "eslint-plugin-ember": "^8.9.1",
 "eslint-plugin-json-files": "^0.7.0",
