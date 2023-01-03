@@ -1,3 +1,13 @@
+name: "branch_protection_lock"
+
+on:
+  workflow_dispatch:
+    inputs:
+      parameter:
+        description: "Reason for Locking"
+        required: true
+        type:  string
+
 jobs:
   job-id:
     runs-on: ubuntu-latest
