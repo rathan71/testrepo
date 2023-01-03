@@ -1,0 +1,11 @@
+jobs:
+  job-id:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Strategy to lock branches
+        uses: Hatzelencio/branch-protection@v1.0.0
+        with:
+          path: .github/workflows/branch_protection_config_lock.yaml
+        env:
+          GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
