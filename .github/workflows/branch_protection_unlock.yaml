@@ -1,0 +1,21 @@
+name: "branch_protection_unlock"
+
+on:
+  workflow_dispatch:
+    inputs:
+      parameter:
+        description: "Reason for UnLocking"
+        required: false
+        type:  string
+
+jobs:
+  job-id:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Strategy to unlock branches
+        uses: Hatzelencio/branch-protection@v1.0.0
+        with:
+          path: .github/config/branch_protection_config_unlock.yaml
+        env:
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN_TESTREPO}}
