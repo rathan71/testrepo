@@ -12,19 +12,20 @@ jobs:
   test: # Test action's functionality
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-      with: 
-        PERSONAL-ACCESS-TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        BASE-BRANCH-PATTERN: 'master'
-        REQUIRED-NUMBER-OF-REVIEWERS: 2
-        REQUIRED-STATUS-CHECKS: 'build,test'
-        REQUIRE-REVIEW-FROM-CODEOWNERS: 'true'
-        DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: 'true'
-        REQUIRE-LINEAR-HISTORY: 'true'
-        ALLOW-FORCE-PUSHES: 'true'
-        ALLOW-DELETIONS: 'true'
-        INCLUDE-ADMINISTRATORS: 'true'
-        # List of users allowed to push on the protected branch.
-        RESTRICTIONS-USERS: 'rathan71'
-        # List of teams allowed to push on the protected branch.
-        RESTRICTIONS-TEAMS: 'rathan71'
+      - uses: actions/checkout@v1
+      - uses: ./    
+        with: 
+          PERSONAL-ACCESS-TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          BASE-BRANCH-PATTERN: 'master'
+          REQUIRED-NUMBER-OF-REVIEWERS: 2
+          REQUIRED-STATUS-CHECKS: 'build,test'
+          REQUIRE-REVIEW-FROM-CODEOWNERS: 'true'
+          DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: 'true'
+          REQUIRE-LINEAR-HISTORY: 'true'
+          ALLOW-FORCE-PUSHES: 'true'
+          ALLOW-DELETIONS: 'true'
+          INCLUDE-ADMINISTRATORS: 'true'
+          # List of users allowed to push on the protected branch.
+          RESTRICTIONS-USERS: 'rathan71'
+          # List of teams allowed to push on the protected branch.
+          RESTRICTIONS-TEAMS: 'rathan71'
