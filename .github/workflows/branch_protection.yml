@@ -1,40 +1,46 @@
-- name: Branch Guardian
+name: "Branch Guardian"
 
 on:
+
   workflow_dispatch:
     inputs:
-      parameter:
-        description: "Reason for Locking"
+      reason:
+        description: 'Reason for Testing'
         required: false
-        type:  string
-        
-  uses: infamous-riddles/branch-guardian@v1
-  with:
-    # The pattern of the base branch
-    BASE-BRANCH-PATTERN: 'master'
-    # Personal access token to read branch protection rules
-    PERSONAL-ACCESS-TOKEN:  ${{secrets.GH_TOKEN_TESTREPO}}
-    # The number of branch protection rules to check in order to find and delete
-    RULES-LIMIT: # optional, default is 100
-    # The number of required reviewers when creating a branch protection rule
-    REQUIRED-NUMBER-OF-REVIEWERS: # optional, default is 1
-    # The status check that need to be successful before a PR can be merged.
-    REQUIRED-STATUS-CHECKS: true
-    # Set to true if you need to require an approved review in pull requests including files with a designated code owner.
-    REQUIRE-REVIEW-FROM-CODEOWNERS: false
-    # Set to true if you need new reviewable commits pushed to a matching branch to dismiss pull request review approvals.
-    DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: # optional, default is false
-    # Set to true if you need linear history on your Pull Requests.
-    REQUIRE-LINEAR-HISTORY: # optional, default is false
-    # Set to true if you want to permit force pushes for all users with push access.
-    ALLOW-FORCE-PUSHES: # optional, default is false
-    # Set to true if you want to allow users with push access to delete matching branches.
-    ALLOW-DELETIONS: # optional, default is false
-    # Set to true if you want to enforce all configured restrictions for administrators, as well.
-    INCLUDE-ADMINISTRATORS: # optional, default is false
-    # List of users allowed to push on the protected branch.
-    RESTRICTIONS-USERS: 'rathan71'
-    # List of teams allowed to push on the protected branch.
-    RESTRICTIONS-TEAMS: # optional, default is 
-    # List of apps allowed to push on the protected branch.
-    RESTRICTIONS-APPS: # optional, default is 
+        type: string
+  
+jobs:
+  job-id:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2    
+      - uses: infamous-riddles/branch-guardian@v1
+        with:
+          # The pattern of the base branch
+          BASE-BRANCH-PATTERN: 'master'
+          # Personal access token to read branch protection rules
+          PERSONAL-ACCESS-TOKEN:  ${{secrets.GH_TOKEN_TESTREPO}}
+          # The number of branch protection rules to check in order to find and delete
+          RULES-LIMIT: 1
+          # The number of required reviewers when creating a branch protection rule
+          REQUIRED-NUMBER-OF-REVIEWERS: 0
+          # The status check that need to be successful before a PR can be merged.
+          REQUIRED-STATUS-CHECKS: true
+          # Set to true if you need to require an approved review in pull requests including files with a designated code owner.
+          REQUIRE-REVIEW-FROM-CODEOWNERS: false
+          # Set to true if you need new reviewable commits pushed to a matching branch to dismiss pull request review approvals.
+          DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: false
+          # Set to true if you need linear history on your Pull Requests.
+          REQUIRE-LINEAR-HISTORY: false
+          # Set to true if you want to permit force pushes for all users with push access.
+          ALLOW-FORCE-PUSHES: false
+          # Set to true if you want to allow users with push access to delete matching branches.
+          ALLOW-DELETIONS: false
+          # Set to true if you want to enforce all configured restrictions for administrators, as well.
+          INCLUDE-ADMINISTRATORS: false
+          # List of users allowed to push on the protected branch.
+          RESTRICTIONS-USERS: 'rathan71'
+          # List of teams allowed to push on the protected branch.
+          RESTRICTIONS-TEAMS: 'rathan71'
+          # List of apps allowed to push on the protected branch.
+          RESTRICTIONS-APPS: none
