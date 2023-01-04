@@ -1,5 +1,12 @@
 name: "Create branch protection rule"
-on: create
+
+on:
+  workflow_dispatch:
+    inputs:
+      parameter:
+        description: "Reason for UnLocking"
+        required: false
+        type:  string
 
 jobs:
   test: # Test action's functionality
