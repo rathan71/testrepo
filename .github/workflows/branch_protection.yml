@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: ./    
         with: 
           PERSONAL-ACCESS-TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           BASE-BRANCH-PATTERN: 'master'
