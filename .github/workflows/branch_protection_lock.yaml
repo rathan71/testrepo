@@ -16,6 +16,6 @@ jobs:
       - name: Strategy to lock branches
         uses: Hatzelencio/branch-protection@v1.0.0
         with:
-          path: .github/workflows/branch_protection_config_lock.yaml
+          path: .github/config/branch_protection_config_lock.yaml
         env:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN_TESTREPO}}
