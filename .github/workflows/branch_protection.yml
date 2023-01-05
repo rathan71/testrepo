@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       parameter:
-        description: "Reason for UnLocking"
+        description: "Test"
         required: false
         type:  string
 
@@ -12,9 +12,10 @@ jobs:
   test: # Test action's functionality
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+      - uses: infamous-riddles/branch-guardian@v1
         with: 
-          PERSONAL-ACCESS-TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          PERSONAL-ACCESS-TOKEN: ${{ secrets.GH_TOKEN_TESTREPO }}
           BASE-BRANCH-PATTERN: 'master'
           REQUIRED-NUMBER-OF-REVIEWERS: 2
           REQUIRED-STATUS-CHECKS: 'build,test'
