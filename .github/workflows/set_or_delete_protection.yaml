@@ -1,0 +1,22 @@
+
+name: Run Branch Protection
+
+on:
+  workflow_dispatch:
+    inputs:
+      parameter:
+        description: "Reason for Locking"
+        required: false
+        type:  string
+  
+  jobs:
+  job-id: test
+    runs-on: ubuntu-latest
+    steps:
+      uses: venh/branch-protection@v1.0.0
+      with:
+        token: '${{ secrets.GH_TOKEN_TESTREPO }}' 
+        org: Name-Of-Your-GitHub-Organization 
+        rulesPath: .github/config/rules.json 
+        includedReposPath: .github/config/includedRepos.txt
+        action: set
