@@ -12,6 +12,7 @@ jobs:
   job-id:
     runs-on: ubuntu-latest
     steps:
+     - uses: actions/checkout@v2
      - uses: venh/branch-protection@v1.0.0
      - with:
         token: '${{ secrets.GH_TOKEN_TESTREPO }}' 
