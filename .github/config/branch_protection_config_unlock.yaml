@@ -2,7 +2,6 @@
   protection:
     required_status_checks:
       strict: false
-      contexts: null
     required_pull_request_reviews:
       dismissal_restrictions: null
       dismiss_stale_reviews: false
