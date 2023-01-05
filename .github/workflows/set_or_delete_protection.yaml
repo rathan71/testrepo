@@ -19,4 +19,4 @@ jobs:
         org: 'rathan71' 
         rulesPath: .github/config/rules.json 
         includedReposPath: .github/config/includedRepos.txt
-        action: set
+        action: delete
