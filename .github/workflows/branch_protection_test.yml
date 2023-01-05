@@ -5,7 +5,8 @@ jobs:
   test: # Test action's functionality
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+    - uses: ./    
       with: 
         PERSONAL-ACCESS-TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         BASE-BRANCH-PATTERN: '^feature\/[a-zA-Z0-9]+$'
