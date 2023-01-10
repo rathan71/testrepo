@@ -13,7 +13,7 @@
   },
   "master": {
     "restrictions": {
-                        "users": ["rathan71"],
+                        "users": ["ashwiniyerabati9"],
                         "teams": [""]
                     },                              
     "required_status_checks": null,
