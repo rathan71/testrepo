@@ -11,8 +11,11 @@
         "dismiss_stale_reviews": true
     }
   },
-  "master": {
-    "restrictions":null,                              
+ "TestBranchProtection": {
+    "restrictions": {
+                        "users": [""],
+                        "teams": [""]
+                    },                               
     "required_status_checks": null,
     "enforce_admins": null,
     "required_linear_history": null,
