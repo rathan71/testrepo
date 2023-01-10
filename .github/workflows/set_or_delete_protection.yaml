@@ -16,7 +16,6 @@ jobs:
      - uses: venh/branch-protection@v1.0.0
        with:
         token: '${{ secrets.GH_TOKEN_TESTREPO }}' 
-        org: 'rathan71' 
+        org: 'Addepar' 
         rulesPath: .github/config/rules.json 
         includedReposPath: .github/config/includedRepos.txt
-        action: delete
