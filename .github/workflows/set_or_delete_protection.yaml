@@ -19,4 +19,4 @@ jobs:
         org: 'Addepar' 
         rulesPath: .github/config/rules.json 
         includedReposPath: .github/config/includedRepos.txt
-        action: delete
+        action: set
