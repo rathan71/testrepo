@@ -1,16 +1,4 @@
 { 
-    "release" : {
-    "restrictions": {
-                        "users": [""],
-                        "teams": [""]
-                    },                              
-    "required_status_checks": null,
-    "enforce_admins": true,
-    "required_linear_history": true,
-    "required_pull_request_reviews": {
-        "dismiss_stale_reviews": true
-    }
-  },
  "TestBranchProtection": {
     "restrictions": {
                         "users": [""],
