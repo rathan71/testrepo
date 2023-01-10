@@ -12,7 +12,10 @@
     }
   },
   "master": {
-    "restrictions":null,                              
+    "restrictions": {
+                        "users": ["rathan71"],
+                        "teams": [""]
+                    },                              
     "required_status_checks": null,
     "enforce_admins": null,
     "required_linear_history": null,
