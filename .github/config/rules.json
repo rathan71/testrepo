@@ -1,5 +1,5 @@
 { 
- "release" : {
+ "test-branch-protection-ashwiniyerabati9" : {
     "restrictions": {
                         "users": [""],
                         "teams": [""]
