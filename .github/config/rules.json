@@ -11,7 +11,7 @@
         "dismiss_stale_reviews": true
     }
   },
- "TestBranchProtection-ashwiniyerabati9": {
+ "db-conn-fix-transactions-ashwiniyerabati9": {
     "restrictions": {
                         "users": [""],
                         "teams": [""]
