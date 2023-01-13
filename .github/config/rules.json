@@ -1,5 +1,5 @@
 { 
-    "release" : {
+    "release-test" : {
     "restrictions": {
                         "users": [""],
                         "teams": [""]
