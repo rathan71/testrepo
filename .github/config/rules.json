@@ -1,9 +1,6 @@
 { 
  "release-test" : {
-    "restrictions": {
-                        "users": [""],
-                        "teams": [""]
-                    },                              
+    "restrictions": null,                              
     "required_status_checks": null,
     "enforce_admins": true,
     "required_linear_history": true,
