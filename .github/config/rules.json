@@ -8,7 +8,7 @@
         "dismiss_stale_reviews": true
     }
   },
- "db-conn-fix-transactions-ashwiniyerabati9": {
+ "release-test": {
     "restrictions": {
                         "users": [""],
                         "teams": [""]
