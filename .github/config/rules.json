@@ -9,10 +9,7 @@
     }
   },
  "release-test": {
-    "restrictions": {
-                        "users": [""],
-                        "teams": [""]
-                    },                               
+   "restrictions": null,                        
     "required_status_checks": null,
     "enforce_admins": null,
     "required_linear_history": null,
