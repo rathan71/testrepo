@@ -1,5 +1,5 @@
 { 
- "test123" : {
+ "test-branch-protect-workflow" : {
     "restrictions": null,                              
     "required_status_checks": null,
     "enforce_admins": true,
