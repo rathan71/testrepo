@@ -1,7 +1,7 @@
-name: CREATE PR
+name: "CREATE PR"
 on:
   push:
-    branches: [master]
+    branches: [master, release-test]
   pull_request:
     branches: [master]
     
