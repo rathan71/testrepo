@@ -1,7 +1,7 @@
 name: "CREATE PR"
 on:
   push:
-    branches: [master, release-test]
+    branches: [master, release/Iverson-*]
   pull_request:
     branches: [master]
     
@@ -10,7 +10,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
-      uses: actions/checkout@v3
+      uses: actions/checkout@main
+      with:
+        repository: rathan71/testrepo2
+        path: ./testrepo2
+
+    - name: Show Working directory
+      run: ls
+
+    - name: "Set Docker tag var"
+      env:
+        DOCKER_TAG: ${{ github.ref }}
+      run: |
+        if ${DOCKER_TAG} == true; then
+          echo "flag=true" >> $GITHUB_ENV
+          echo "flag set to true"
+        else
+          echo "flag=false" >> $GITHUB_ENV
+          echo "flag set to false"
+        fi
+
+    - name: Run sed command
+      run:  |
+        sed 's/private//g' package.json
+        git add .
+        git commit -m "package.json updated"
+        git push
+      
     - name: create pull request
       run: gh pr create -B master -H release-test --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
       env:
