@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
-      uses: actions/checkout@main
+      uses: actions/checkout@master
       with:
         repository: rathan71/testrepo2
         path: ./testrepo2
