@@ -1,0 +1,19 @@
+name: "CREATE PR"
+on:
+  push:
+    branches: [master, release-test]
+  pull_request:
+    branches: [master]
+    
+jobs:
+  Create-PR:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+    - name: create pull request
+      run: gh pr create -B master -H release-test --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+      env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_TESTREPO }}
+
+            
